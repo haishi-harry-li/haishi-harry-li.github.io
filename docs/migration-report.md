@@ -1,7 +1,7 @@
 # Migration report — 2026-09-07
 
 ## Result
-All four pages implemented locally with the original dark red navigation, red headings, white background, portrait and academic lists. Public deployment is pending authentication as `haishi-harry-li`; the existing SSH identity belongs to another account and was not used for publishing. No repository has been created remotely and the Google Site has not been changed.
+All four pages implemented locally with the original dark red navigation, red headings, white background, portrait and academic lists. Published to https://haishi-harry-li.github.io/ from the public repository https://github.com/haishi-harry-li/haishi-harry-li.github.io. GitHub API authentication was verified as `haishi-harry-li`; the unrelated SSH identity was not used. The Google Site has not been changed.
 
 ## Content verification
 Compared every nonempty original heading/paragraph and every content hyperlink occurrence with the migrated pages, allowing local file URL substitutions, removal of Google Scholar tracking parameters, and the verified ETSG award URL correction:
@@ -18,7 +18,7 @@ All comparisons passed. Research includes the published-paper list beyond its fi
 ## Browser verification
 All four pages and the custom 404 document loaded successfully at widths of 1440, 390 and 320 pixels (15 checks). No horizontal overflow, JavaScript errors or external runtime requests were observed. Each page has exactly one h1. All 46 local page references resolved, all local font references resolved, and the eight PDF files have valid PDF signatures. Screenshots are in `docs/previews/`.
 
-The custom 404 document was tested directly and at a simulated nested missing URL: its assets loaded correctly. Keyboard skip navigation and HTTP downloads of all eight PDFs passed. The validator also passed in a fresh copy without local migration snapshots. GitHub's production missing-route response still requires deployment verification. No mainland-China network tests have been performed.
+The custom 404 document was tested directly and at a simulated nested missing URL: its assets loaded correctly. Keyboard skip navigation and HTTP downloads of all eight PDFs passed. The validator also passed in a fresh copy without local migration snapshots. GitHub's production nested missing-route response also passed (HTTP 404 with the custom document). No mainland-China network tests have been performed.
 
 ## Local downloads and provenance
 Downloaded the portrait and eight documents already publicly linked by the user's site. CV, paper and slides were checked with PDF text extraction. All four conference documents are image-only PDFs, so their first pages were rendered and visually checked against their labeled year and purpose. Files were preserved rather than OCR-modified. Fonts were fetched for local serving with SIL OFL licenses included.
@@ -69,8 +69,13 @@ The CV still prints the old Google Site address. The owner can supply a newly ge
 | 403 | https://www.sciencedirect.com/science/article/abs/pii/S0022199620300593 |
 | 403 | https://www.sciencedirect.com/science/article/abs/pii/S0304393224000254 |
 
-## Deployment and transition remaining
-- Authenticate GitHub CLI as `haishi-harry-li` and verify the API identity before creating the public website repository.
-- Push the prepared main branch, enable GitHub Actions as the Pages source, and verify the deployed HTTPS pages and PDFs.
+## Public deployment verification
+- GitHub Actions deployment 34063707398 completed successfully: https://github.com/haishi-harry-li/haishi-harry-li.github.io/actions/runs/34063707398.
+- Pages source is GitHub Actions, status is built, and HTTPS enforcement is enabled.
+- All 28 deployed HTML, metadata and asset files returned HTTP 200 and matched the local files byte for byte, including all eight PDFs.
+- All four public pages passed browser checks at desktop (1440px) and mobile (390px) widths, with no overflow, JavaScript errors or external runtime requests.
+- A nested missing URL returned the custom HTTP 404 page. The migration report URL returned 404, verifying that documentation is excluded from the website artifact.
+
+## Transition remaining
 - Test actual mainland access without a VPN. A custom domain or alternate host may be considered if tests show unreliable access.
 - After successful deployment, update the old Google Site with a move notice and update academic profile links. The old site has not been deleted or redirected.

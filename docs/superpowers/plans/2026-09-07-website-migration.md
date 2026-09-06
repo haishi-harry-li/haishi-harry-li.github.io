@@ -19,7 +19,8 @@ Preserve the dark red navigation, red headings, white background, portrait/biogr
 - [x] Serve locally and inspect desktop and mobile pages using Chrome; verify no overflow, missing assets, runtime errors or third-party network dependencies. Save preview screenshots outside deployment output.
 - [x] Audit external links, distinguishing HTTP errors and access restrictions. Record evidence in docs/migration-report.md.
 - [x] Commit reviewed website and deliver a complete preview with the precise account connection step.
-- [ ] Publish and verify public pages after authentication as haishi-harry-li. Mainland testing remains outstanding until evidence is supplied.
+- [x] Publish and verify public pages after authentication as haishi-harry-li.
+- [ ] Obtain mainland-China access results without a VPN; requires an external network test.
 
 ## Files
 - Four root HTML pages: readable, directly editable migrated content.
