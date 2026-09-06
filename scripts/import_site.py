@@ -80,7 +80,7 @@ def document(file, title, body):
   <meta property="og:type" content="website">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}assets/images/haishi-harry-li.jpg">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
